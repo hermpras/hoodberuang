@@ -13,6 +13,11 @@ export const HOODBEAR_CONFIG = {
     process.env.NEXT_PUBLIC_HOODBEAR_POST_URL ||
     "https://x.com/hoodbearNFT/status/2090791977780695209?s=20",
 
+  // Official HoodBear Discord invite URL
+  DISCORD_URL:
+    process.env.NEXT_PUBLIC_HOODBEAR_DISCORD_URL ||
+    "https://discord.gg/peGeJTtn8",
+
   // Collection metadata
   TOTAL_SUPPLY: "5,555",
   ALLOWLIST_MAX_PER_WALLET: 1,

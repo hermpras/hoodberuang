@@ -14,6 +14,7 @@ export default function Navbar() {
   const isHomePage = pathname === "/";
   const isApplyPage = pathname.startsWith("/apply");
   const isDocsPage = pathname.startsWith("/docs");
+  const isClaimPage = pathname.startsWith("/claim");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -35,6 +36,7 @@ export default function Navbar() {
       href: isHomePage ? "#how-it-works" : "/#how-it-works",
     },
     { label: "Docs", href: "/docs" },
+    { label: "Claim", href: "/claim" },
   ];
 
   return (
@@ -71,6 +73,7 @@ export default function Navbar() {
             {navLinks.map((link) => {
               const isCurrent =
                 (link.label === "Docs" && isDocsPage) ||
+                (link.label === "Claim" && isClaimPage) ||
                 (link.label === "Home" && isHomePage);
               return (
                 <Link
@@ -132,6 +135,7 @@ export default function Navbar() {
             {navLinks.map((link) => {
               const isCurrent =
                 (link.label === "Docs" && isDocsPage) ||
+                (link.label === "Claim" && isClaimPage) ||
                 (link.label === "Home" && isHomePage);
               return (
                 <Link
