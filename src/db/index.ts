@@ -44,6 +44,7 @@ function getDb() {
 
   const client = postgres(connectionString, {
     max: 1,
+    prepare: false,
   });
 
   return drizzle(client, {

@@ -1,8 +1,14 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { signIn, signOut, useSession } from "next-auth/react";
-import { AlertCircle, CheckCircle2, LogIn, LogOut } from "lucide-react";
+import {
+  AlertCircle,
+  CheckCircle2,
+  LogIn,
+  LogOut,
+  RefreshCw,
+} from "lucide-react";
 import Turnstile from "@/components/Turnstile";
 
 const ETH_WALLET_REGEX = /^0x[a-fA-F0-9]{40}$/;
@@ -24,26 +30,30 @@ export default function ClaimForm() {
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isRefreshing, setIsRefreshing] = useState(false);
 
-  // Fetch the live allocation counter on mount (and after a successful claim).
-  useEffect(() => {
-    let cancelled = false;
-
-    async function fetchStatus() {
-      try {
-        const res = await fetch("/api/claim");
-        const data = await res.json();
-        if (!cancelled) setClaimStatus(data);
-      } catch {
-        // Non-fatal — counter just won't render if this fails.
-      }
+  const fetchStatus = useCallback(async () => {
+    try {
+      const res = await fetch("/api/claim");
+      const data = await res.json();
+      setClaimStatus(data);
+    } catch {
+      // Non-fatal — counter just won't render if this fails.
     }
+  }, []);
 
+  // Fetch the live allocation counter on mount (and after a successful
+  // claim, or when the session status changes e.g. right after login).
+  useEffect(() => {
     fetchStatus();
-    return () => {
-      cancelled = true;
-    };
-  }, [isSubmitted, sessionStatus]);
+  }, [isSubmitted, sessionStatus, fetchStatus]);
+
+  async function handleRefreshStatus() {
+    setIsRefreshing(true);
+    setErrorMsg(null);
+    await fetchStatus();
+    setIsRefreshing(false);
+  }
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -175,16 +185,28 @@ export default function ClaimForm() {
                 You need to verify as a holder in one of our partner collections
                 first. Head to the{" "}
                 <span className="font-pixel text-xs">#verify-holder</span>{" "}
-                channel in the HoodBear Discord, then come back here.
+                channel in the HoodBear Discord, then hit refresh below.
               </span>
             </div>
-            <button
-              onClick={() => signOut()}
-              className="text-xs font-bold text-hood-primary/60 hover:text-hood-accent transition-colors flex items-center gap-1"
-            >
-              <LogOut className="w-3.5 h-3.5" />
-              Log out
-            </button>
+            <div className="flex items-center gap-4">
+              <button
+                onClick={handleRefreshStatus}
+                disabled={isRefreshing}
+                className="text-xs font-bold text-hood-primary hover:text-hood-accent transition-colors flex items-center gap-1.5 disabled:opacity-50"
+              >
+                <RefreshCw
+                  className={`w-3.5 h-3.5 ${isRefreshing ? "animate-spin" : ""}`}
+                />
+                {isRefreshing ? "Checking..." : "Refresh Status"}
+              </button>
+              <button
+                onClick={() => signOut()}
+                className="text-xs font-bold text-hood-primary/60 hover:text-hood-accent transition-colors flex items-center gap-1"
+              >
+                <LogOut className="w-3.5 h-3.5" />
+                Log out
+              </button>
+            </div>
           </div>
         )}
 
