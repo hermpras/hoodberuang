@@ -41,4 +41,8 @@ export const CLAIM_CONFIG = {
     .split(",")
     .map((id) => id.trim())
     .filter(Boolean),
+
+  // Role auto-assigned on a successful claim (added alongside whichever
+  // verified-holder role the user already has — never removed).
+  BEARLIST_ROLE_ID: process.env.DISCORD_BEARLIST_ROLE_ID || "",
 } as const;

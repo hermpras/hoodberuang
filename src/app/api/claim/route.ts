@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { auth } from "@/auth";
 import { claimDbOperations } from "@/db";
-import { checkVerifiedRole } from "@/lib/discord";
+import { checkVerifiedRole, assignBearlistRole } from "@/lib/discord";
 import { CLAIM_CONFIG } from "@/config/constants";
 
 const ETH_WALLET_REGEX = /^0x[a-fA-F0-9]{40}$/;
@@ -161,6 +161,11 @@ export async function POST(request: Request) {
       walletAddress: trimmedWallet,
       verifiedCollection: matchedRoleId,
     });
+
+    // 8. Assign the Bearlist role (best-effort — the database record above
+    // is the source of truth for the claim; a role-assignment hiccup
+    // should never make a successful claim look like it failed).
+    await assignBearlistRole(discordId);
 
     return NextResponse.json({
       success: true,
