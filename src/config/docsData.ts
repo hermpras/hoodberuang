@@ -28,15 +28,15 @@ export const DOCS_SECTIONS: DocsSection[] = [
     title: "How the Mint Works",
     shortTitle: "Mint Structure",
     description:
-      "Transparent breakdown of Team, Whitelist, and Public mint allocations.",
+      "Transparent breakdown of Team, Bearlist, and Public mint allocations.",
   },
   {
     id: "allowlist",
     numeral: "04",
-    title: "Allowlist",
-    shortTitle: "Allowlist",
+    title: "Bearlist",
+    shortTitle: "Bearlist",
     description:
-      "Details for the 3,500 guaranteed free mint allocation and application flow.",
+      "Details for the 4,000 guaranteed free mint allocation and claim flow.",
   },
   {
     id: "public-mint",
@@ -83,7 +83,7 @@ export const MINT_TIERS: MintTier[] = [
     id: "team",
     numeral: "01",
     name: "TEAM",
-    amount: "100",
+    amount: "55",
     price: "FREE",
     limit: "100",
     details: "Reserved for giveaways, community rewards & team engagement",
@@ -92,8 +92,8 @@ export const MINT_TIERS: MintTier[] = [
   {
     id: "whitelist",
     numeral: "02",
-    name: "WHITELIST",
-    amount: "3,500",
+    name: "BEARLIST",
+    amount: "4000",
     price: "FREE",
     limit: "1 per wallet",
     details: "",
@@ -103,8 +103,8 @@ export const MINT_TIERS: MintTier[] = [
     id: "public",
     numeral: "03",
     name: "PUBLIC",
-    amount: "1,955",
-    price: "0.00025 ETH",
+    amount: "1500",
+    price: "0.0004 ETH",
     limit: "5 per wallet",
     details: "",
     isPrimary: false,
@@ -112,21 +112,21 @@ export const MINT_TIERS: MintTier[] = [
 ];
 
 export const ALLOWLIST_INFO = {
-  supply: "3,500",
+  supply: "4000",
   price: "FREE",
   limitPerWallet: "1 per wallet",
   description:
-    "The HoodBear Allowlist guarantees access to mint 1 bear for free. Spots are allocated through community participation and the official allowlist application flow.",
+    "The HoodBear Bearlist guarantees access to mint 1 bear for free. Spots are allocated through community participation, team selection, and the official Bearlist claim flow.",
   applyUrl: "/apply",
 };
 
 export const PUBLIC_MINT_INFO = {
-  supply: "1,955",
-  price: "0.00025 ETH",
+  supply: "1500",
+  price: "0.0004 ETH",
   limitPerWallet: "5 per wallet",
   chain: "Robinhood",
   description:
-    "The Public Mint opens after the allowlist window concludes. Any remaining supply will be available to all participants at 0.00025 ETH. ",
+    "The Public Mint opens after the Bearlist window concludes. Any remaining supply will be available to all participants at 0.0004 ETH.",
 };
 
 export const HOLDER_BENEFITS_INFO = {

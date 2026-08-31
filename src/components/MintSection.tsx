@@ -7,22 +7,22 @@ export default function MintSection() {
   const mintCards = [
     {
       step: "01 — TEAM",
-      amount: "100",
+      amount: "55",
       copy: "Reserved for giveaways, community rewards & team engagement.",
       icon: Users,
       highlight: false,
     },
     {
       step: "02 — ALLOWLIST",
-      amount: "3,500",
+      amount: "4000",
       copy: "Free to mint, 1 per wallet.",
       icon: Sparkles,
       highlight: true,
     },
     {
       step: "03 — PUBLIC",
-      amount: "1,955",
-      copy: "0.00025 ETH.",
+      amount: "1500",
+      copy: "0.0004 ETH.",
       icon: Globe,
       highlight: false,
     },

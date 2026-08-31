@@ -106,7 +106,7 @@ export default function ClaimForm() {
       {/* ALLOCATION COUNTER */}
       <div className="space-y-2">
         <div className="flex items-center justify-between text-xs font-bold uppercase tracking-wider text-hood-primary">
-          <span>Allocation Claimed</span>
+          <span>Bearlist Claimed</span>
           <span className="font-pixel text-hood-accent">
             {claimStatus
               ? `${claimStatus.claimed.toLocaleString()} / ${claimStatus.allocation.toLocaleString()}`
