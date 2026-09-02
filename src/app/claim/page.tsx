@@ -4,9 +4,9 @@ import ClaimForm from "@/components/ClaimForm";
 import { Sparkles } from "lucide-react";
 
 export const metadata = {
-  title: "Claim Your Spot — InkBear",
+  title: "Claim Your Spot — HoodBear",
   description:
-    "Bearlist members and holders of our partner collections can claim their InkBear Bearlist spot here.",
+    "Bearlist members and holders of our partner collections can claim their HoodBear Bearlist spot here.",
 };
 
 const STEPS = [
