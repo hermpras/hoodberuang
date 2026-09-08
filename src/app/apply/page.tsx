@@ -59,22 +59,25 @@ export default function ApplyPage() {
 
               {/* Artwork Gallery Teaser Grid */}
               <div className="grid grid-cols-4 gap-2.5 pt-2">
-                {["bear_9.png", "bear_6.png", "bear_4.png", "bear_10.png"].map(
-                  (bearImg, idx) => (
-                    <div
-                      key={idx}
-                      className="aspect-square relative rounded-hood border-2 border-hood-primary/60 bg-hood-bg overflow-hidden"
-                    >
-                      <Image
-                        src={`/assets/bears/${bearImg}`}
-                        alt={`HoodBear #${idx + 2}`}
-                        fill
-                        sizes="80px"
-                        className="pixelated object-contain p-1"
-                      />
-                    </div>
-                  ),
-                )}
+                {[
+                  "bear_14.png",
+                  "bear_15.png",
+                  "bear_4.png",
+                  "bear_10.png",
+                ].map((bearImg, idx) => (
+                  <div
+                    key={idx}
+                    className="aspect-square relative rounded-hood border-2 border-hood-primary/60 bg-hood-bg overflow-hidden"
+                  >
+                    <Image
+                      src={`/assets/bears/${bearImg}`}
+                      alt={`HoodBear #${idx + 2}`}
+                      fill
+                      sizes="80px"
+                      className="pixelated object-contain p-1"
+                    />
+                  </div>
+                ))}
               </div>
 
               {/* Key Highlights */}
