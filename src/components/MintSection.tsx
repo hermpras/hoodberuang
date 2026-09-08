@@ -22,7 +22,7 @@ export default function MintSection() {
     {
       step: "03 — PUBLIC",
       amount: "1500",
-      copy: "0.0004 ETH.",
+      copy: "0.00025 ETH.",
       icon: Globe,
       highlight: false,
     },

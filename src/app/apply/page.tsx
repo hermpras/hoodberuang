@@ -49,7 +49,7 @@ export default function ApplyPage() {
                 <div className="absolute inset-0 bg-gradient-to-t from-hood-primary/20 to-transparent z-10 pointer-events-none" />
                 <Image
                   src="/assets/bears/bear_13.png"
-                  alt="HoodBear Artwork Showcase"
+                  alt="HoodBear Artwork Sh0owcase"
                   fill
                   sizes="(max-width: 768px) 100vw, 400px"
                   priority

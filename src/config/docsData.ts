@@ -104,7 +104,7 @@ export const MINT_TIERS: MintTier[] = [
     numeral: "03",
     name: "PUBLIC",
     amount: "1500",
-    price: "0.0004 ETH",
+    price: "0.00025 ETH",
     limit: "5 per wallet",
     details: "",
     isPrimary: false,
@@ -122,11 +122,11 @@ export const ALLOWLIST_INFO = {
 
 export const PUBLIC_MINT_INFO = {
   supply: "1500",
-  price: "0.0004 ETH",
+  price: "0.00025 ETH",
   limitPerWallet: "5 per wallet",
   chain: "Robinhood",
   description:
-    "The Public Mint opens after the Bearlist window concludes. Any remaining supply will be available to all participants at 0.0004 ETH.",
+    "The Public Mint opens after the Bearlist window concludes. Any remaining supply will be available to all participants at 0.00025 ETH.",
 };
 
 export const HOLDER_BENEFITS_INFO = {

@@ -16,7 +16,7 @@ export default function Hero() {
   const heroStats = [
     { value: "5,555", label: "SUPPLY" },
     { value: "FREE", label: "ALLOWLIST" },
-    { value: "0.0004 ETH", label: "PUBLIC MINT" },
+    { value: "0.00025 ETH", label: "PUBLIC MINT" },
     { value: "ROBINHOOD", label: "CHAIN" },
   ];
 
