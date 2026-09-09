@@ -11,7 +11,7 @@ export const HOODBEAR_CONFIG = {
   // Official HoodBear Featured Post URL for Like & RT (Task 02) and Comment (Task 03)
   X_POST_URL:
     process.env.NEXT_PUBLIC_HOODBEAR_POST_URL ||
-    "https://x.com/hoodbearNFT/status/2094847225050571072?s=20",
+    "https://x.com/hoodbearNFT/status/2097682620880650432?s=20",
 
   // Official HoodBear Discord invite URL
   DISCORD_URL:
