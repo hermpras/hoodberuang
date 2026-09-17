@@ -41,7 +41,7 @@ export default function Footer() {
                   className="pixelated"
                 />
               </div>
-              <span className="font-display text-lg font-bold tracking-wider text-hood-primary">
+              <span className="font-logo text-xl sm:text-2xl tracking-wider text-hood-primary">
                 HOODBEAR
               </span>
             </Link>

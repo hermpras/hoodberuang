@@ -39,7 +39,7 @@ export default function Hero() {
           >
             {/* Eyebrow */}
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-hood bg-hood-card border-2 border-hood-primary shadow-hood-sm">
-              <span className="font-pixel text-xs text-hood-accent uppercase tracking-wider font-bold">
+              <span className="font-logo text-sm text-hood-accent tracking-wider">
                 HOODBEAR
               </span>
               <span className="w-1.5 h-1.5 rounded-full bg-hood-accent" />

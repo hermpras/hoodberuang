@@ -63,7 +63,7 @@ export default function Navbar() {
                 className="pixelated object-cover"
               />
             </div>
-            <span className="font-display text-lg sm:text-xl tracking-wide font-bold text-hood-primary group-hover:text-hood-accent transition-colors">
+            <span className="font-logo text-xl sm:text-2xl tracking-wider text-hood-primary group-hover:text-hood-accent transition-colors">
               HOODBEAR
             </span>
           </Link>

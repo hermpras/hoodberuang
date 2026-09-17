@@ -22,6 +22,7 @@ const config: Config = {
         sans: ['var(--font-sans)', 'system-ui', 'sans-serif'],
         display: ['var(--font-display)', 'var(--font-sans)', 'sans-serif'],
         pixel: ['var(--font-pixel)', 'monospace'],
+        logo: ['var(--font-logo)', 'cursive'],
       },
       boxShadow: {
         'hood-sm': '2px 2px 0px 0px #273524',
