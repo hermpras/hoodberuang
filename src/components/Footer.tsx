@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Twitter } from "lucide-react";
+import { Twitter, Mail } from "lucide-react";
 import { HOODBEAR_CONFIG } from "@/config/constants";
 
 function DiscordIcon({ className }: { className?: string }) {
@@ -46,7 +46,7 @@ export default function Footer() {
               </span>
             </Link>
             <p className="text-sm font-medium text-hood-primary/70">
-              A place to belong.
+              Digital collectibles and character art.
             </p>
           </div>
 
@@ -82,6 +82,15 @@ export default function Footer() {
               aria-label="Discord"
             >
               <DiscordIcon className="w-4 h-4" />
+            </a>
+            <a
+              href="mailto:hello@hoodbear.xyz"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2.5 rounded-hood bg-hood-card border-2 border-hood-primary hover:bg-hood-accent hover:text-hood-light transition-colors shadow-hood-sm"
+              aria-label="Email"
+            >
+              <Mail className="w-4 h-4" />
             </a>
           </div>
         </div>
